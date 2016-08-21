@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+
+    <!-- default : 템플릿에 설정된 페이지의 구성 요소에 대한 실제 파일을 지정합니다.  -->
+    <!-- 부모 -->
+    <definition name="default" template="/WEB-INF/tiles/layout/layout.jsp">
+        <put-attribute name="header" value="/WEB-INF/tiles/tile/header.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="menu"  value="/WEB-INF/tiles/tile/menu.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/tiles/tile/footer.jsp" />
+    </definition>
+
+    <!-- 상속 -->
+    <definition name="*.tiles" extends="default">
+        <put-attribute name="body" value="/WEB-INF/jsp/{1}.jsp" />
+    </definition>
+
+    <!-- 돌연변이 -->
+    <definition name="*.jsp" extends="no-tiles">
+        <put-attribute name="noTemplate" value="/WEB-INF/jsp/{1}.jsp" />
+    </definition>
+
+</tiles-definitions>
