@@ -3,6 +3,7 @@
 <!DOCTYPE>
 <html>
 <head>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
 </head>
 <body>
     <tiles:insertAttribute name="menu" />
