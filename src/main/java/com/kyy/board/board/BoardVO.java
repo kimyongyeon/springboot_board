@@ -15,10 +15,16 @@ import javax.persistence.*;
 @AllArgsConstructor // 인자가 모두 있는 생성자
 @NoArgsConstructor // 인자없는 기본 생성자
 public class BoardVO {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String bno; // 게시판번호
     private String title; // 제목
+    private String writer; // 글쓴이
+    private String password; // 비밀번호
+    private boolean sex; // 성별
+    private String jobGubun; // 직업구분
+    private String langGubun; // 언어구분
     private String content; // 내용
     private int viewCount; // 조회수
 

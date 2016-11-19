@@ -32,7 +32,11 @@ public class webConfig extends WebMvcConfigurerAdapter{
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/boardViewList").setViewName("board_list.tiles");
+        registry.addViewController("/main").setViewName("main.tiles"); // 메인
+        registry.addViewController("/boardTplList").setViewName("board_list.tiles"); // 목록
+        registry.addViewController("/boardTplPagingList").setViewName("board_page_list.tiles"); // 페이징
+        registry.addViewController("/boardTplCreate").setViewName("board_write.tiles"); // 쓰기
+        registry.addViewController("/boardTplEdit").setViewName("board_edit.tiles"); // 상세 , 수정 , 삭제
     }
 
     @Bean
